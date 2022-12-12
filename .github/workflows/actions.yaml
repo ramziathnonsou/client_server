@@ -1,0 +1,19 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  check-bats-version
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: compilation de sever
+      run: cd sever 
+    - run: gcc sever.c -o sever
+#    - run: ./sever
+    - name: complilation du client
+      run: cd client
+    - run: gcc client.c -o client 
+#    -run: ./client
